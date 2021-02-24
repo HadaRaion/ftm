@@ -1,0 +1,80 @@
+$btn-size: 60px;
+$btn-arrowsize: calc($btn-size / 4);
+
+.fp-controlArrow {
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+	bottom: 100px;
+	position: absolute;
+	z-index: 4;
+	width: $btn-size;
+	height: $btn-size;
+	border: 2px solid #fff;
+	border-radius: $btn-size;
+	color: #fff;
+	cursor: pointer;
+	line-height: $btn-size;
+	margin-left: -(calc($btn-size / 2));
+	transition: all 0.25s ease-in-out;
+
+	@mixin atMedium {
+		color: #000;
+		border: 1px solid #000;
+		bottom: 20px;
+	}
+
+	&:hover {
+		background: #fff;
+		color: #111;
+	}
+	&:after {
+		position: absolute;
+		display: inline-block;
+		content: '';
+		width: $btn-arrowsize;
+		height: $btn-arrowsize;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+.fp-controlArrow.fp-prev {
+	right: calc(var(--wrapper-padding) + $btn-size + 20px);
+	@mixin atMedium {
+		left: 0;
+	}
+
+	&:after {
+		border-bottom: 2px solid;
+		border-left: 2px solid;
+		transform: rotateZ(45deg);
+		margin-left: calc($btn-arrowsize * -0.25);
+		margin-top: calc($btn-arrowsize * -0.5);
+
+		@mixin atMedium {
+			border-bottom: 1px solid;
+			border-left: 1px solid;
+		}
+	}
+}
+.fp-controlArrow.fp-next {
+	right: var(--wrapper-padding);
+	@mixin atMedium {
+		left: calc($btn-size + 10px);
+	}
+
+	&:after {
+		border-top: 2px solid;
+		border-right: 2px solid;
+		transform: rotateZ(45deg);
+		margin-left: calc($btn-arrowsize * -0.75);
+		margin-top: calc($btn-arrowsize * -0.5);
+
+		@mixin atMedium {
+			border-top: 1px solid;
+			border-right: 1px solid;
+		}
+	}
+}

@@ -1,0 +1,102 @@
+nav {
+	ul {
+		display: flex;
+
+		@mixin atLarge {
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+
+	.header__menu {
+		margin-left: 50%;
+		transform: translateX(-65%);
+
+		@mixin atXLarge {
+			margin-left: 0;
+			transform: translateX(50%);
+		}
+
+		@mixin atLarge {
+			transform: translateX(0%);
+			font-size: 3.2rem;
+			font-weight: 500;
+			letter-spacing: -0.03rem;
+			padding: 2rem 0;
+			border-bottom: 1px solid black;
+			justify-content: space-around;
+			flex-grow: 6;
+		}
+
+		& > li {
+			margin-right: 4rem;
+			position: relative;
+		}
+
+		& > li:last-child {
+			margin-right: 0;
+		}
+
+		& > li > a::after {
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: -1;
+			right: 10px;
+			top: -5px;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background: #ffd800;
+			background-blend-mode: multiply;
+			opacity: 0;
+			transition: all 1s ease;
+		}
+		& > li.active > a::after {
+			right: -10px;
+			opacity: 1;
+		}
+	}
+
+	.header__links {
+		display: none;
+
+		@mixin atLarge {
+			display: flex;
+			justify-content: space-around;
+			flex-grow: 3;
+			align-items: flex-end;
+			font-size: 1.6rem;
+			letter-spacing: -0.03rem;
+			padding: 1rem 0;
+		}
+	}
+
+	.header__language {
+		font-family: 'Cera PRO Medium', sans-serif;
+		line-height: 20px;
+		letter-spacing: -0.03em;
+		padding-top: 4px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		@mixin atLarge {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 2rem 0;
+			border-top: 1px solid black;
+		}
+
+		& > li {
+			margin-right: 5rem;
+
+			@mixin atLarge {
+				margin-right: 0;
+			}
+		}
+
+		& > li:last-child {
+			margin-right: 0;
+		}
+	}
+}

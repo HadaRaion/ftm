@@ -1,0 +1,23 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@font-face {
+	font-family: 'Cera PRO Medium';
+	font-style: normal;
+	font-display: fallback;
+	src: local('Cera Pro Medium'), url('/wp-content/themes/ftm-theme/font/Cera PRO Medium.woff2') format('woff2'), url('/wp-content/themes/ftm-theme/font/Cera PRO Medium.woff') format('woff'), url('/wp-content/themes/ftm-theme/font/Cera PRO Medium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Futura';
+	font-style: normal;
+	font-weight: 500;
+	font-display: fallback;
+	src: url('/wp-content/themes/ftm-theme/font/futura-condensed-medium.woff2') format('woff2'), url('/wp-content/themes/ftm-theme/font/futura-condensed-medium.woff') format('woff'), url('/wp-content/themes/ftm-theme/font/futura-condensed-medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Futura';
+	font-style: normal;
+	font-weight: 900;
+	font-display: fallback;
+	src: url('/wp-content/themes/ftm-theme/font/futura-condensed-bold.woff2') format('woff2'), url('/wp-content/themes/ftm-theme/font/futura-condensed-bold.woff') format('woff'), url('/wp-content/themes/ftm-theme/font/futura-condensed-bold.ttf') format('truetype');
+}

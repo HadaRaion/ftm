@@ -1,0 +1,487 @@
+#kboard-default-list {
+	/* 전체글수 게시글 정렬기준 */
+	.kboard-list-header {
+		display: none;
+	}
+
+	/* 게시판 카테고리 */
+	.kboard-category .kboard-category-list {
+		margin: 0 0 5px 0;
+		padding: 10px 10px 15px;
+		border: 0;
+		background-color: $lightGray;
+		overflow: hidden;
+
+		& li a {
+			display: block;
+			padding: 10px 10px 8px 10px;
+			font-size: 1.4rem;
+			font-weight: 400;
+			border: 0;
+			border-bottom: none;
+			text-decoration: none;
+			text-shadow: none;
+			box-shadow: none;
+			color: #000;
+		}
+
+		li.kboard-category-selected a {
+			color: #000;
+			font-weight: 400;
+			text-decoration: underline;
+			text-underline-offset: 5px;
+			border-bottom: none;
+		}
+	}
+
+	/* 게시판 리스트 */
+	.kboard-list {
+		table td {
+			padding: 20px 0;
+			height: auto;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 1.4rem;
+		}
+		tbody tr td,
+		thead tr td {
+			color: #000;
+			border-bottom: 1px solid $gray;
+		}
+
+		table td.kboard-list-vote {
+			display: none;
+		}
+
+		.kboard-default-cut-strings {
+			/* font-weight: 700; */
+		}
+		tbody td.kboard-list-title img {
+			position: relative;
+			bottom: 3px;
+		}
+		tbody td.kboard-list-title .kboard-comments-count {
+			font-family: 'Cera PRO Medium', sans-serif;
+			color: #000;
+			font-weight: bold;
+			font-size: 1.4rem;
+			margin-left: 14px;
+			position: relative;
+			bottom: 1px;
+		}
+	}
+
+	.kboard-search {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.kboard-total-count {
+			font-size: 1.2rem;
+			letter-spacing: -0.03em;
+		}
+
+		#kboard-search-form-4 {
+			display: flex;
+
+			& > select {
+				margin-right: 10px;
+				width: 70px;
+				background-position: calc(100% - 8px) calc(100% - 14px) !important;
+				padding-left: 10px !important;
+				font-size: 1.2rem;
+			}
+
+			& > input {
+				border-right: 0px;
+				font-size: 1.2rem;
+				margin-right: 0;
+			}
+			& > .kboard-default-button-small {
+				background-color: transparent !important;
+				color: #000 !important;
+				border-radius: 5px;
+				width: 36px;
+				height: 36px;
+				line-height: 36px;
+				padding: 0 5px;
+				border: 1px solid #000;
+				border-radius: 0;
+				border-left: none;
+				color: transparent !important;
+
+				&::after {
+					content: '';
+					display: block;
+					width: 20px;
+					height: 20px;
+					background: url('/wp-content/themes/ftm-theme/images/icons/icon_search.svg');
+					position: absolute;
+					bottom: 8px;
+				}
+			}
+		}
+
+		select,
+		input {
+			height: 36px;
+			line-height: 36px;
+			border-color: #000;
+		}
+	}
+	/* 페이지네이션 */
+	.kboard-pagination .kboard-pagination-pages {
+		li a {
+			font-family: 'Cera PRO Medium', sans-serif;
+			display: block;
+			margin: 0 4px;
+			padding: 0;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			line-height: 28px;
+			font-size: 14px;
+			font-weight: 400;
+			text-align: center;
+			color: #000;
+			background-color: transparent;
+			transition-duration: 0s;
+		}
+
+		li.active a {
+			color: #000;
+			font-weight: 700;
+			background-color: $yellow;
+		}
+
+		li:hover a {
+			font-weight: bold;
+		}
+
+		li.prev-page a,
+		li.next-page a {
+			padding: 0;
+		}
+		li.first-page,
+		li.last-page {
+			display: none;
+		}
+	}
+}
+/* 새글 아이콘 */
+.kboard-default-new-notify {
+	display: none;
+}
+
+/* 글쓰기 */
+#kboard-default-editor {
+	$title-width: 80px;
+	$title-height: 36px;
+	$border: 1px solid #dcdcdc;
+	.kboard-attr-row {
+		.attr-name {
+			display: inline;
+			float: left;
+			margin: 0;
+			padding: 0 10px 0 0px;
+			width: $title-width;
+			line-height: $title-height;
+			color: #000;
+			font-size: 1.4rem;
+			font-weight: 400;
+
+			.attr-required-text {
+				display: none;
+			}
+		}
+
+		.attr-value {
+			margin: 0 0 0 $title-width;
+			padding: 0;
+			line-height: $title-height;
+			font-size: 1.4rem;
+
+			/* 비밀클 체크박스 */
+			[type='checkbox']:not(:checked),
+			[type='checkbox']:checked {
+				position: absolute;
+				left: 0;
+				opacity: 0.01;
+			}
+
+			[type='checkbox']:not(:checked) + label,
+			[type='checkbox']:checked + label {
+				position: relative;
+				padding-left: 4.5rem;
+				padding-bottom: 0;
+				cursor: pointer;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: -8px;
+					width: 3.6rem;
+					height: 3.6rem;
+					border: $border;
+					background: transparent;
+					border-radius: 0;
+					transition: all 0.275s;
+				}
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: -8px;
+					width: 3.6rem;
+					height: 3.6rem;
+					background: url('/wp-content/themes/ftm-theme/images/icons/icon_check.svg');
+					background-repeat: no-repeat;
+					background-position: center;
+					transition: all 0.2s;
+				}
+			}
+
+			[type='checkbox']:checked + label::before {
+				background: #dcdcdc;
+			}
+
+			[type='checkbox']:not(:checked) + label:after {
+				opacity: 0;
+				transform: scale(0) rotate(45deg);
+			}
+
+			[type='checkbox']:checked + label:after {
+				opacity: 1;
+				transform: scale(1) rotate(0);
+			}
+		}
+	}
+
+	.kboard-attr-title input {
+		width: 100% !important;
+	}
+
+	input[type='text'],
+	input[type='email'],
+	input[type='number'],
+	input[type='date'],
+	input[type='password'] {
+		padding: 0 10px;
+		width: 30%;
+		height: $title-height;
+		line-height: $title-height;
+		color: #000;
+		border: $border;
+		box-sizing: border-box;
+
+		&:focus {
+			border-bottom: $border;
+			background-color: $lightGray;
+		}
+	}
+
+	.raion-media {
+		display: block;
+		height: 36px;
+		width: 30%;
+		border: $border;
+		padding-left: 10px;
+		font-size: 1.3rem;
+		line-height: 34px;
+
+		@media screen and (max-width: 600px) {
+			width: 100%;
+		}
+	}
+	select {
+		margin-right: 10px;
+		width: calc(30% - 17px) !important;
+		height: 36px;
+		border: $border;
+		background-position: calc(100% - 8px) calc(100% - 14px) !important;
+		padding-left: 10px !important;
+		font-size: 1.3rem;
+		@media screen and (max-width: 600px) {
+			width: 100% !important;
+		}
+	}
+}
+
+/* 글 상세페이지 */
+#kboard-default-document {
+	.kboard-title h1 {
+		color: #000;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.kboard-document-wrap {
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+	}
+
+	.kboard-detail {
+		background-color: transparent;
+		border-top: 0;
+		border-bottom: 1px solid $gray;
+		.detail-attr .detail-name {
+			color: #000;
+		}
+		.detail-attr .detail-value {
+			color: #000;
+		}
+		.detail-attr.detail-writer {
+			padding-left: 2px;
+		}
+
+		.detail-attr.detail-category1 {
+			padding-left: 3px;
+		}
+	}
+
+	.kboard-content .content-view {
+		padding: 20px 0 20px 2px;
+		line-height: 1.7;
+		letter-spacing: -0.02em;
+
+		> p {
+			font-family: 'Noto Sans KR', sans-serif !important;
+		}
+	}
+
+	/* 좋아요 싫어요 인쇄 버튼 */
+	.kboard-button-action,
+	.kboard-document-navi {
+		display: none;
+	}
+
+	.kboard-comments-area {
+		border-bottom: 1px solid #000;
+	}
+}
+
+/* 댓글 */
+.kboard-comments-default {
+	background-color: transparent;
+
+	.comments-header {
+		padding-left: 0 !important;
+	}
+
+	.comments-count {
+		font-size: 1.2rem;
+		color: #000;
+		.comments-total-count {
+			font-size: 1.3rem;
+			font-weight: 700;
+			font-family: 'Cera PRO Medium', sans-serif;
+		}
+	}
+
+	.kboard-comments-wrap {
+		padding: 15px 0 0;
+	}
+	.comments-list {
+		padding-left: 0px;
+		margin-top: 10px;
+
+		.comments-list {
+			padding-left: 15px;
+		}
+	}
+
+	.raion-comments-list-controller {
+		float: right;
+		display: flex;
+		padding-top: 3px;
+	}
+
+	.raion-comments-list-controller .comments-button-action {
+		margin-right: 5px;
+		padding: 3px 4px;
+		font-size: 1.2rem;
+		line-height: 12px;
+		border-radius: 0;
+	}
+
+	.comments-list-content {
+		font-size: 1.4rem;
+		font-weight: 400;
+		line-height: 1.6;
+		letter-spacing: -0.02em;
+	}
+	hr {
+		display: none;
+	}
+	.comments-header {
+		padding-left: 8px;
+	}
+	.kboard-comments-form {
+		padding-left: 3px;
+	}
+
+	.comments-count .comments-total-count {
+		color: $darkGray;
+	}
+	.comments-sort select {
+		display: none;
+	}
+	.kboard-comments-form .comments-field.field-image1,
+	.kboard-comments-form .comments-field.field-file1 {
+		display: none;
+	}
+	.cosmosfarm-members-form button,
+	.cosmosfarm-members-form input[type='submit'] {
+	}
+	.kboard-comments-form .comments-submit-button input[type='submit'] {
+		background-color: $darkGray !important;
+		color: #fff !important;
+		border-radius: 5px;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 20px;
+		font-size: 1.4rem;
+		font-weight: 400;
+	}
+}
+
+.kboard-comments-default .comments-list .comments-list-controller .comments-button-like,
+.kboard-comments-default .comments-list .comments-list-controller .comments-button-unlike {
+	display: none;
+}
+/* 버튼디자인 */
+a.kboard-default-button-small,
+input.kboard-default-button-small,
+button.kboard-default-button-small {
+	background-color: #000 !important;
+	/* display: block; */
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	border-radius: 50%;
+	line-height: 50px;
+	font-size: 0.2rem;
+	text-align: center;
+	color: #fff !important;
+	/* color: transparent !important; */
+
+	&::after {
+		content: '';
+		display: block;
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		left: 13px;
+		bottom: 13px;
+	}
+
+	/* &.raion-write::after,
+	&.raion-save::after {
+		background: url('/wp-content/themes/ftm-theme/images/icons/icon_edit.svg');
+	}
+	&.raion-back::after,
+	&.raion-list::after {
+		background: url('/wp-content/themes/ftm-theme/images/icons/icon_cancle.svg');
+	} */
+}

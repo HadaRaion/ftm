@@ -1,0 +1,24 @@
+.mouse {
+	width: 24px;
+	height: auto;
+	margin-left: 2px;
+}
+
+.mouse-scroll {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 50px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	& > span {
+		margin-bottom: 8px;
+		font-family: 'Cera PRO Medium', sans-serif;
+		font-weight: 400;
+		letter-spacing: -0.02em;
+		font-size: 1.2rem;
+	}
+}

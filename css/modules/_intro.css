@@ -1,0 +1,58 @@
+.intro {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: calc(calc(var(--vh, 1vh) * 100) - var(--header-height));
+	padding-left: var(--wrapper-padding);
+	padding-right: var(--wrapper-padding);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@mixin atMedium {
+		padding: 0;
+	}
+
+	&__ftm {
+		position: relative;
+		width: 50vw;
+
+		@mixin atMedium {
+			width: 60%;
+		}
+		@mixin atSmall {
+			width: 80%;
+		}
+	}
+
+	&__text {
+		position: relative;
+		font-size: clamp(1.6rem, 0.9vw, 3rem);
+		margin-top: 40px;
+		font-weight: 300;
+		line-height: 2;
+		@mixin atMedium {
+			.break-line {
+				display: block;
+			}
+		}
+		@mixin atSmall {
+			font-size: 1.3rem;
+			letter-spacing: -0.05em;
+		}
+	}
+}
+
+#television {
+	transform: translate(195px, 0);
+}
+
+#multimedia {
+	transform: translate(550px, 0);
+}
+
+.test {
+	p {
+		font-size: 7rem;
+	}
+}

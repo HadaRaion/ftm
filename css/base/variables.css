@@ -1,0 +1,33 @@
+$darkGray: #2b2b2b;
+$midGray: #828282;
+$gray: #e0e0e0;
+$lightGray: #f9f9f9;
+$red: #ff036a;
+$blue: #036fef;
+$yellow: #ffda00;
+
+:root {
+	--header-height: 80px;
+	--wrapper-padding: 16rem;
+}
+
+@mixin atLarge {
+	:root {
+		--header-height: 120px;
+		--wrapper-padding: 4rem;
+	}
+}
+
+@mixin atMedium {
+	:root {
+		--header-height: 100px;
+		--wrapper-padding: 3rem;
+	}
+}
+
+@mixin atSmall {
+	:root {
+		--header-height: 70px;
+		--wrapper-padding: 2rem;
+	}
+}

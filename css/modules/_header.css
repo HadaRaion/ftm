@@ -1,0 +1,89 @@
+.header {
+	position: fixed;
+	width: 100%;
+	height: var(--header-height);
+	padding-left: var(--wrapper-padding);
+	padding-right: var(--wrapper-padding);
+	background: #fff;
+	color: #000;
+	z-index: 1000;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		height: 80px;
+
+		& > a {
+			display: block;
+			width: 100px;
+			height: 100%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		@mixin atLarge {
+			height: var(--header-height);
+			a {
+				width: 130px;
+			}
+		}
+
+		@mixin atMedium {
+			height: var(--header-height);
+			a {
+				width: 120px;
+			}
+		}
+
+		@mixin atSmall {
+			height: var(--header-height);
+			a {
+				width: 80px;
+			}
+		}
+	}
+
+	&__menu-wrapper {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@mixin atLarge {
+			width: 100%;
+			height: calc(calc(var(--vh, 1vh) * 100) - var(--header-height));
+			padding-left: var(--wrapper-padding);
+			padding-right: var(--wrapper-padding);
+			position: absolute;
+			top: var(--header-height);
+			right: 0;
+			z-index: 1000;
+			background: #fff;
+			transform: translateX(100%);
+			transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			&--active {
+				transform: translateX(0%);
+			}
+
+			& > ul > li {
+				opacity: 1;
+			}
+		}
+
+		@keyframes menuLinkFade {
+			from {
+				opacity: 0;
+				transform: translateX(50px);
+			}
+			to {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+		}
+	}
+}

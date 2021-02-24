@@ -1,0 +1,79 @@
+.burger {
+	display: none;
+	position: relative;
+	float: right;
+	background: #fff;
+
+	@mixin atLarge {
+		display: block;
+		width: 40px;
+		height: 24px;
+	}
+
+	@mixin atSmall {
+		width: 32px;
+		height: 20px;
+	}
+
+	&__line {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: #000;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: 0.25s ease-in-out;
+	}
+
+	span:nth-child(1) {
+		top: 0px;
+	}
+
+	span:nth-child(2),
+	span:nth-child(3) {
+		top: 11px;
+
+		@mixin atSmall {
+			top: 9px;
+		}
+	}
+
+	span:nth-child(4) {
+		top: 22px;
+
+		@mixin atSmall {
+			top: 18px;
+		}
+	}
+
+	&.open span:nth-child(1) {
+		top: 11px;
+		width: 0%;
+		left: 50%;
+
+		@mixin atSmall {
+			top: 9px;
+		}
+	}
+
+	&.open span:nth-child(2) {
+		transform: rotate(45deg);
+	}
+
+	&.open span:nth-child(3) {
+		transform: rotate(-45deg);
+	}
+
+	&.open span:nth-child(4) {
+		top: 11px;
+
+		width: 0%;
+		left: 50%;
+
+		@mixin atSmall {
+			top: 9px;
+		}
+	}
+}

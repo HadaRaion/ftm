@@ -1,0 +1,35 @@
+@define-mixin atSmall {
+	@media (max-width: 576px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atMedium {
+	@media (max-width: 768px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atLarge {
+	@media (max-width: 1159px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atXLarge {
+	@media (max-width: 1400px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin clearfix {
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+}
+
+@define-mixin multiply {
+	mix-blend-mode: darken;
+}
